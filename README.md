@@ -40,17 +40,59 @@ the `tldr curl`
 
 ## ssh
 
+Run sshd in a docker container, user must copy files. Connect and do things.
+
+Alternatively quiz user.
+
+* ssh into a machine with a pem file
+* ssh execute a command on a remote machine
+* scp file back and forth
+
 ## vercel
+
+* Deploy vercel web page that uses create react app
+* Deploy NextJS app
+* Deploy something with API
+* Deploy API that connects to a database
 
 ## web page styling
 
+* Mimic some web pages exactly given an image of the web page and image assets
+
+
+Test each design with image diffing tools (it should exactly match)
+
 ## python
+
+Solve basic python unit tests.
 
 ## python types
 
+Fully type a project which is not fully typed, using mypy to check where types are missing.
+
 ## knexjs
 
+Test selecting with subqueries and insertion.
+
 ## ava tests
+
+Should be able to write tests.
+
+Develop tests that fail and succeed against a function in a bunch of scenarios. The grader
+tests to see that certain functions fail and others succeed when ava is run. The player,
+not knowing the details of the function, must implement the tests properly to get the
+correct ava output.
+
+e.g.
+
+Write 5 tests for the function "mystery-function.js". Don't fix the tests if they fail,
+but test the following things, make sure each test is named exactly as the string given
+below:
+
+* "should export default function (mysteryFunction)"
+* "should also export an object mysteryObject equal to {a: 1, b: 2}"
+* "await mysteryFunction("hello") should return "world"
+* "await mysteryFunction(1,2) should return "three"
 
 ## micro api endpoint tests
 
@@ -156,3 +198,4 @@ User should secure database given a schema and a query that will be used.
 
 ## Postgresql Triggers
  
+## Slack Bots
