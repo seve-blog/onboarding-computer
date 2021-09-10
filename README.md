@@ -62,6 +62,8 @@ Alternatively quiz user.
 
 Test each design with image diffing tools (it should exactly match)
 
+Should have responsive challenges.
+
 ## python
 
 Solve basic python unit tests.
@@ -369,8 +371,6 @@ database for the success case.
 User should secure database given a schema and a query that will be used.
 
 ## Postman
-
-## Styling Tests (match a given deisgn)
 
 ## Schema Design
 
