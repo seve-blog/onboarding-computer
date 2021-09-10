@@ -96,13 +96,57 @@ below:
 
 ## micro api endpoint tests
 
+* parse json request and perform operation on it, then return json
+* add logging middleware
+* handle errors with custom middleware
+* handle edge cases with guard clauses
+
 ## pgknexlove
+
+* connect to database
+* connect to database at custom port/host/etc. using environment variables
+* create test database in test
 
 ## micro + pgknexlove
 
+* get database in endpoint
+
 ## React
 
+* create todo list
+
+player will be tested with playwright and instructed to add ids or
+name fields certain ways so that playwright can figure out what to
+do.
+
 ## Typescript Types
+
+* Given a postgres schema, design a suitable type
+* Type a class
+* Type a function
+* Type an exclusive union of top level API objects
+
+
+The last point is about an exclusive (discriminate) union of top level api objects
+refers to the idea that every api response is of a type, and the top level key is
+enough to discriminate the content's type. e.g. We want the player to design this
+or expand on an existing one given some API responses.
+
+```
+type APIResponse = HealthResponse | GetDevicesResponse
+
+type HealthResponse = {
+  HealthResponse: {
+    status: "ok" | "not-online"
+  }
+}
+
+type GetDevicesResponse = {
+  GetDevicesResponse: {
+    devices: Array<any>
+  }
+}
+```
 
 ## Typescript Derived Types / Utility Functions
 
