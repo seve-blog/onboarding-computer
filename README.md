@@ -148,73 +148,209 @@ type GetDevicesResponse = {
 }
 ```
 
+The validation for this can use tsc build in a strict mode. We may
+have to make sure certain files haven't changed or certain imports
+are still present.
+
+You can have the grader create a temporary file or something that
+tests the types. e.g. you can have a file that should throw build
+errors if the object is constructed incorrectly.
+
 ## Typescript Derived Types / Utility Functions
+
+Have the user use a bunch of the builtin typescript utility functions
+as well as some of the functions in [type-fest](https://github.com/sindresorhus/type-fest)
+
+The type-fest repo has good examples and descriptions that may help
+in creating some challenges.
 
 ## React Storybook
 
+* Add storybook to a project, make it load in all `*.stories.jsx` files
+* Create stories for a bunch of different states of a component
+
+We can validate the stories using playwright and an image diffing tool.
+
 ## React Hooks
+
+* useState
+* useEffect
+* useMemo
+* useRef
 
 ## API Calls with React Hooks
 
+* API call using useState and useEffect
+* API call using Apollo and GraphQL
+* API call using useApi hook
+
+I think the best way to do this might be fill in the blank or something,
+it's just hard to write a validated test for.
+
 ## JSONB in SQL
+
+* Query into a jsonb object
+* Insert a JSONB record
+* Query search for jsonb property list containing a string
 
 ## connecting via psql
 
-## psql special commands
+* psql flags
+* psql d command
+* psql d table
+* psql connect to another database
+* executing basic queries
+
+## pg_dump
+  
+* Dump a database to a file
+* Dump a schema to a file
+* Upload a schema to a database
 
 ## npm moment library
 
+* Get current time
+* Add time to a date
+* Convert date to various useful formats, including fromNow
+
 ## npm chalk library
 
+* color some terminal output
+  
 ## npm concurrently
+
+* write a command that builds typescript and runs a typescript server
+  simultaneously and reruns on changes
 
 ## sqlite
 
+* create a sqlite database
+* use command line sqlite3 tool
+* inspecting schema with .tables etc.
+
 ## npm sqlite3 library
+
+* connect to sqlite schema
+* connect to in-memory database
 
 ## Typescript project setup
 
+* configure tsconfig, enable/disable various options
+
 ## Typescript project with ttypescript
+
+* config absolute to relative paths conversion
+
+## Packaging an npm library
+
+* preparing library for publishing with "main" key in package json, scoping
+* writing tests
+* publishing to github packages
+* automatic publishing with github workflow manager
 
 ## writing README.md
 
+* Essential components of readme, Getting Started, Installation, Usage
+
 ## writing DEVELOPMENT.md
+
+* Architecture, setup etc.
+
+I think one way to test for this is to ask the player to find development
+READMEs online that match the criteria (they can use github's project explore)
+and provide links, we'll then validate that the READMEs match a certain regex
+where it includes most of the things we want in a great development doc.
 
 ## Casings
 
 PascalCase, camelCase and kebab-case. Use airbnb casing style guide.
+
+* Some conversions for terms e.g. convert "get api response" to camel case.
  
 ## Prettier
 
+* Prettier setup in a project
+* Rewriting an entire project to format to prettier
+* Setting up a prettier github workflow using github workflow manager
+
 ## React Immutability and Memoization
+
+* Test various scenarios with questions like "what rerenders when the
+  button is clicked?"
 
 ## flexbox
 
+* Test flexbox knowledge, the player could lay out a bunch of pages
+  that the grader can test with playwright
+
 ## postgrest
+
+* Run a postgrest server
+* Run a postgres server via the npm library
+* Using an example schema, write tests that verify certain data is
+  present (i.e. call the postgres server with axios to verify the
+  data is there) the player should have to design some url queries
+  to make this work
 
 ## ms npm module
 
+* Get various times using ms
+
 ## playwright npm module
+
+* Create a browser to perform some actions on a web page, and
+  take a screenshot using playwright
+  
+We should make it so it's impossible to do the task on the website
+without some automation. e.g. the browser has to click a button
+a thousand times or something
 
 ## github workflow manager
 
-## github workflows
+* install various github workflows
+* modify a testing github workflow to start postgres as a service
 
 ## npm axios
 
-## query strings
+* make a get request
+* make a post request with body and authorization header
+* make a custom axios object with a base url and default authorization header
 
 ## JSON Web Tokens
 
+* sign a jwt with a secret, parse it and verify using the secret
+* sign a jwt with an private key and verify it on the other end with the public key
+
 ## Semantic Release
+
+* test on commit standards
 
 ## NextJS
 
+* create nextjs project with a login page, view devices page and api endpoint for login
+
 ## Create React App
+
+* bootstrap create react app and modify to TODO list
+* set up an api server and proxy to it in development mode
 
 ## Node fs module
 
+* write a file, read a file with `fs`
+* same thing with `fs/promises`
+
 ## OAuth build test
+
+Build an OAuth system from scratch
+* Two servers, a Provider and an EndProduct
+* `provider/authorize` endpoint for logging in
+* `end product/login` should direct to authorize
+* create internal urls and stuff
+
+We should be able to test this one with playwright, we
+should pre-design the schema/database and the majority
+of the server setup so that we can test against the
+database for the success case.
 
 ## React Container vs Components
 
